@@ -1,0 +1,116 @@
+####################################
+# OS / General
+####################################
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+
+####################################
+# Node / Web
+####################################
+node_modules/
+dist/
+build/
+out/
+.cache/
+coverage/
+.nyc_output/
+
+####################################
+# Environment
+####################################
+.env
+.env.*
+!.env.example
+
+####################################
+# Editors / IDEs
+####################################
+.idea/
+.vscode/
+*.iml
+.history/
+
+####################################
+# Flutter / Dart (NUKE EVERYTHING)
+####################################
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub/
+.pub-cache/
+.packages
+build/
+test/
+EDGE_CASES_FOR_TESTS.md
+analysis_options.yaml
+.metadata
+
+####################################
+# Platforms (NUKE ALL)
+####################################
+android/
+ios/
+windows/
+macos/
+linux/
+web/runner/
+web/.last_build_id
+
+####################################
+# Android junk
+####################################
+*.apk
+*.aab
+*.keystore
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+####################################
+# iOS junk
+####################################
+*.xcuserstate
+*.xcworkspace
+*.xcodeproj
+ios/Flutter/
+ios/Pods/
+
+####################################
+# Windows junk
+####################################
+*.exe
+*.dll
+*.msi
+*.pdb
+*.obj
+
+####################################
+# macOS junk
+####################################
+*.app
+*.dmg
+
+####################################
+# Linux junk
+####################################
+*.deb
+*.rpm
+
+####################################
+# Misc
+####################################
+.perl
+genhtml.perl
+
+####################################
+# Python
+####################################
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+backend/
