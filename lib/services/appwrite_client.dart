@@ -1,4 +1,5 @@
 import 'package:appwrite/appwrite.dart';
+import 'package:remindme/services/appwrite_config.dart';
 
 class AppwriteClient {
   static late final Client _client;
@@ -9,8 +10,8 @@ class AppwriteClient {
 
   static void init() {
     _client = Client()
-        .setEndpoint('https://YOUR_APPWRITE_ENDPOINT/v1')
-        .setProject('YOUR_PROJECT_ID')
+        .setEndpoint(AppwriteConfig.endpoint)
+        .setProject(AppwriteConfig.projectId)
         .setSelfSigned(status: false); // This is only for development, remove if you are trying to deploy or make it false!
 
     account = Account(_client);
