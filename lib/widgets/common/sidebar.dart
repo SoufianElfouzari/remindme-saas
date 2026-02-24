@@ -8,6 +8,11 @@ class Sidebar extends StatelessWidget {
     return const Column(
       children: [
         //Todo: Logo
+        SizedBox(
+          height: 100,
+          width: double.infinity,
+          child: Placeholder(),
+        )
         //Todo: Navigation Items
         //Todo: Help & Support Button
         //Todo: Logout Button
