@@ -7,7 +7,19 @@ class ShellPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: DashboardScreen(),
+      body: Column(
+        //Todo: Header
+        children: [
+          Row(
+            children: [
+              //Todo: Sidebar
+              //Todo: Page
+              DashboardScreen() //Todo: Replace Dashboard with real dynamic page 
+            ],
+          ),
+
+        ],
+      ),
     );
   }
 }
