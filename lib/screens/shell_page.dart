@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remindme/screens/dashboard_screen.dart';
+import 'package:remindme/widgets/common/sidebar.dart';
 
 class ShellPage extends StatelessWidget {
   const ShellPage({super.key});
@@ -12,7 +13,7 @@ class ShellPage extends StatelessWidget {
         children: [
           Row(
             children: [
-              //Todo: Sidebar
+              Sidebar(),
               //Todo: Page
               DashboardScreen() //Todo: Replace Dashboard with real dynamic page 
             ],
