@@ -1,22 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:remindme/constants/navigation_items.dart';
+import 'package:remindme/widgets/common/navigation_item.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return SizedBox(
       width: 275,
+      height: screenHeight,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(30, 50, 30, 50),
-        child: const Column(
+        child: Column(
           children: [
             SizedBox(
               height: 100,
               width: double.infinity,
               child: Placeholder(),
-            )
-            //Todo: Navigation Items
+            ), //Todo: Replace with real logo
+
+            SizedBox(height: 75),
+
+            Expanded(
+              child: ListView.builder(
+                itemCount: NavigationItems.items.length,
+                itemBuilder: (context, index) {
+                  final item = NavigationItems.items[index];
+
+                  return NavigationItem(item: item, isActive: index == 0); //Todo: Replace with real active state
+                },
+              ),)
+          
+
             //Todo: Help & Support Button
             //Todo: Logout Button
           ],
