@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:remindme/constants/colors.dart';
 import 'package:remindme/constants/text_styles.dart';
 import 'package:remindme/screens/dashboard_screen.dart';
+import 'package:remindme/screens/shell_page.dart';
 import 'package:remindme/services/start_session.dart';
 import 'package:remindme/utils/check_login.dart';
 import 'package:remindme/widgets/common/button.dart';
@@ -51,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                         if (context.mounted) {
                           // Nagiator PUSH material page route to dashboard
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => const DashboardScreen()));
+                              MaterialPageRoute(builder: (context) => const ShellPage()));
                         }
                         print('Login successful');
                       } else {
