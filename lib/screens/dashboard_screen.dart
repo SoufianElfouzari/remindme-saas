@@ -5,6 +5,16 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Column(
+      children: [
+        //Todo: Header
+        Row(
+          children: [
+            //Todo: Sidebar
+            //Todo: Main Content
+          ],
+        ) 
+      ]
+    );
   }
 }
