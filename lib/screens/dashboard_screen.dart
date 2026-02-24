@@ -13,8 +13,8 @@ class DashboardScreen extends StatelessWidget {
             //Todo: Sidebar
             //Todo: Main Content
           ],
-        ) 
-      ]
+        ),
+      ],
     );
   }
 }

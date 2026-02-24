@@ -6,7 +6,7 @@ import 'package:remindme/models/navigation_item_model.dart';
 class NavigationItem extends StatelessWidget {
   final NavigationItemModel item;
   final bool isActive;
-  const NavigationItem({super.key, required this.item, this.isActive=false});
+  const NavigationItem({super.key, required this.item, this.isActive = false});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,17 @@ class NavigationItem extends StatelessWidget {
       child: SizedBox(
         child: Row(
           children: [
-            Icon(item.icon, color: isActive ? AppColors.primary : AppColors.disabled),
+            Icon(
+              item.icon,
+              color: isActive ? AppColors.primary : AppColors.disabled,
+            ),
             const SizedBox(width: 25),
-            Text( item.title, style: AppTextStyles.h3.copyWith(color: isActive ? AppColors.primary : AppColors.disabled)),
+            Text(
+              item.title,
+              style: AppTextStyles.h3.copyWith(
+                color: isActive ? AppColors.primary : AppColors.disabled,
+              ),
+            ),
             const Spacer(),
             Container(
               width: 5,
@@ -26,7 +34,7 @@ class NavigationItem extends StatelessWidget {
                 color: isActive ? AppColors.primary : Colors.transparent,
                 borderRadius: BorderRadius.circular(2.5),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -15,10 +15,9 @@ class ShellPage extends StatelessWidget {
             children: [
               Sidebar(),
               //Todo: Page
-              DashboardScreen() //Todo: Replace Dashboard with real dynamic page 
+              DashboardScreen(), //Todo: Replace Dashboard with real dynamic page
             ],
           ),
-
         ],
       ),
     );

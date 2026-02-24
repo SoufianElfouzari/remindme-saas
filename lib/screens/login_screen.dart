@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
-    
+
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -50,24 +50,30 @@ class LoginScreen extends StatelessWidget {
                       if (await isLoggedIn()) {
                         if (context.mounted) {
                           // Nagiator PUSH material page route to dashboard
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => const ShellPage()));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ShellPage(),
+                            ),
+                          );
                         }
                         debugPrint('Login successful');
                       } else {
                         // show error message
                         if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Login failed')),
-                        );}
-                      } 
-                
-                      
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Login failed')),
+                          );
+                        }
+                      }
                     },
                     buttonHeight: 35,
                     buttonColor: AppColors.primary,
                     buttonRadius: BorderRadius.circular(10),
-                    buttonText: const Text('Login', style: AppTextStyles.button),
+                    buttonText: const Text(
+                      'Login',
+                      style: AppTextStyles.button,
+                    ),
                   ),
                 ],
               ),

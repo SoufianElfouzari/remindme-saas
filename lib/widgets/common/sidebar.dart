@@ -29,10 +29,13 @@ class Sidebar extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final item = NavigationItems.items[index];
 
-                  return NavigationItem(item: item, isActive: index == 0); //Todo: Replace with real active state
+                  return NavigationItem(
+                    item: item,
+                    isActive: index == 0,
+                  ); //Todo: Replace with real active state
                 },
-              ),)
-          
+              ),
+            ),
 
             //Todo: Help & Support Button
             //Todo: Logout Button
