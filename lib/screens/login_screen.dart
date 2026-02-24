@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) => const ShellPage()));
                         }
-                        print('Login successful');
+                        debugPrint('Login successful');
                       } else {
                         // show error message
                         if (context.mounted) {
