@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:remindme/constants/colors.dart';
 import 'package:remindme/constants/text_styles.dart';
+import 'package:remindme/screens/dashboard_screen.dart';
+import 'package:remindme/services/start_session.dart';
+import 'package:remindme/utils/check_login.dart';
 import 'package:remindme/widgets/common/button.dart';
 import 'package:remindme/widgets/common/text_field.dart';
 
@@ -9,12 +12,14 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Row(
         children: [
-          // TODO Left Side: Login Form (Email, Password, Login Button etc.)
           SizedBox(
             width: screenWidth * 0.4, // 40% vom Screen,
             child: Padding(
@@ -27,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                   AppTextField(
                     label: 'Email eingeben',
                     controller:
-                        TextEditingController(), //Todo: Placeholder Controller ersetzen
+                        emailController, //Todo: Placeholder Controller ersetzen
                   ),
 
                   const SizedBox(height: 22),
@@ -35,14 +40,33 @@ class LoginScreen extends StatelessWidget {
                   AppTextField(
                     label: 'Passwort eingeben',
                     controller:
-                        TextEditingController(), //Todo: Placeholder Controller ersetzen
+                        passwordController, //Todo: Placeholder Controller ersetzen
                   ),
-                  // TODO Login Button
                   const SizedBox(height: 30),
                   AppButton(
+                    onPressed: () async {
+                      await startSession(emailController, passwordController);
+                      // check if login was successful and navigate to dashboard
+                      if (await isLoggedIn()) {
+                        if (context.mounted) {
+                          // Nagiator PUSH material page route to dashboard
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => const DashboardScreen()));
+                        }
+                        print('Login successful');
+                      } else {
+                        // show error message
+                        if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Login failed')),
+                        );}
+                      } 
+                
+                      
+                    },
+                    buttonHeight: 35,
                     buttonColor: AppColors.primary,
                     buttonRadius: BorderRadius.circular(10),
-                    buttonHeight: 35,
                     buttonText: const Text('Login', style: AppTextStyles.button),
                   ),
                 ],
