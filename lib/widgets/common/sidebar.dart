@@ -3,11 +3,19 @@ import 'package:remindme/constants/navigation_items.dart';
 import 'package:remindme/widgets/common/navigation_item.dart';
 
 class Sidebar extends StatelessWidget {
-  const Sidebar({super.key});
+  final int selectedIndex;
+  final Function(int) onItemSelected;
+
+  const Sidebar({
+    super.key,
+    required this.selectedIndex,
+    required this.onItemSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
+
     return SizedBox(
       width: 275,
       height: screenHeight,
@@ -18,10 +26,10 @@ class Sidebar extends StatelessWidget {
             SizedBox(
               height: 100,
               width: double.infinity,
-              child: Placeholder(),
+              child: const Placeholder(),
             ), //Todo: Replace with real logo
 
-            SizedBox(height: 75),
+            const SizedBox(height: 75),
 
             Expanded(
               child: ListView.builder(
@@ -29,10 +37,16 @@ class Sidebar extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final item = NavigationItems.items[index];
 
-                  return NavigationItem(
-                    item: item,
-                    isActive: index == 0,
-                  ); //Todo: Replace with real active state
+                  return MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () => onItemSelected(index),
+                      child: NavigationItem(
+                        item: item,
+                        isActive: selectedIndex == index,
+                      ),
+                    ),
+                  );
                 },
               ),
             ),
