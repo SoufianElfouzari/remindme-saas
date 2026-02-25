@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:remindme/constants/colors.dart';
-import 'package:remindme/constants/text_styles.dart';
-import 'package:remindme/screens/shell_page.dart';
-import 'package:remindme/services/start_session.dart';
 import 'package:remindme/utils/check_login.dart';
+import 'package:remindme/screens/shell_page.dart';
 import 'package:remindme/widgets/common/button.dart';
+import 'package:remindme/constants/theme/colors.dart';
+import 'package:remindme/services/start_session.dart';
 import 'package:remindme/widgets/common/text_field.dart';
+import 'package:remindme/constants/theme/text_styles.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
