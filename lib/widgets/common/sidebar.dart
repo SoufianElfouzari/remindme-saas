@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remindme/constants/navigation_items.dart';
+import 'package:remindme/constants/ui/navigation_items.dart';
 import 'package:remindme/widgets/common/navigation_item.dart';
 
 class Sidebar extends StatelessWidget {

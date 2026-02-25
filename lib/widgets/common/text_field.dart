@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remindme/constants/colors.dart';
-import 'package:remindme/constants/text_styles.dart';
+import 'package:remindme/constants/theme/colors.dart';
+import 'package:remindme/constants/theme/text_styles.dart';
 
 class AppTextField extends StatelessWidget {
   final String label;
