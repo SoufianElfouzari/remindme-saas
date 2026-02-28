@@ -48,7 +48,7 @@ test/
 EDGE_CASES_FOR_TESTS.md
 analysis_options.yaml
 .metadata
-lib/services/appwrite_config.dart
+lib/constants/services/appwrite_config.dart
 ####################################
 # Platforms (NUKE ALL)
 ####################################
