@@ -1,5 +1,5 @@
 import 'package:appwrite/appwrite.dart';
-import 'package:remindme/services/appwrite_config.dart';
+import 'package:remindme/constants/services/appwrite_config.dart';
 
 class AppwriteClient {
   static late final Client _client;
